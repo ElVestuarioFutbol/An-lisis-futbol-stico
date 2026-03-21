@@ -1,62 +1,108 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fábricas de Talentos | El Vestuario</title>
-    <style>
-        :root { --primary: #1b5e20; --gold: #ffcc00; }
-        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; margin: 0; background: #000; color: #fff; }
-        
-        header { background: #1a1a1a; padding: 30px; text-align: center; border-bottom: 3px solid var(--primary); }
-        .hero { 
-            height: 400px; width: 100%; position: relative; 
-            background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.9)), 
-                        url('https://images.unsplash.com/photo-1526232762682-d2f5f6ca5042?q=80&w=1200');
-            background-size: cover; background-position: center; display: flex; align-items: flex-end;
-        }
-        .hero-title { padding: 40px; max-width: 900px; margin: 0 auto; width: 100%; }
-        .hero-title h1 { font-size: 3rem; margin: 0; text-transform: uppercase; font-weight: 900; }
-        .category { color: var(--gold); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fábricas de Talentos | El Vestuario</title>
+    
+        <style>
+        /* Forzamos que el fondo de TODA la página sea claro */
+        html, body {
+            background: #f4f4f4 !important; /* Gris muy claro, como en Fuera de Juego */
+            color: #333 !important; /* Texto oscuro */
+            font-family: 'Segoe UI', sans-serif !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+        }
 
-        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; background: #111; padding: 40px; border-radius: 10px; }
-        p { font-size: 1.1rem; color: #ccc; margin-bottom: 25px; }
-        h2 { color: var(--primary); border-left: 5px solid var(--gold); padding-left: 15px; margin-top: 40px; }
-        
-        footer { text-align: center; padding: 40px; background: #1a1a1a; margin-top: 60px; border-top: 1px solid #333; }
-        footer a { color: #fff; text-decoration: none; margin: 0 10px; font-size: 0.9rem; opacity: 0.7; }
-        .back-btn { display: inline-block; background: var(--primary); color: white; padding: 10px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 20px; }
-    </style>
+        /* Navbar superior verde */
+        .navbar {
+            background: #1b5e20 !important; /* El verde primario */
+            color: white !important;
+            padding: 15px !important;
+            text-align: center !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 10px !important;
+        }
+        .navbar h1 { margin: 0 !important; font-size: 1.5rem !important; text-transform: uppercase !important; letter-spacing: 2px !important; }
+
+        /* Contenedor blanco (el "card") del artículo */
+        .container-article {
+            max-width: 800px !important;
+            margin: 40px auto !important;
+            background: white !important; /* Fondo blanco */
+            padding: 40px !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+        }
+
+        /* Enlace de volver arriba */
+        .back-link {
+            color: #1b5e20 !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-size: 0.9rem !important;
+            margin-bottom: 20px !important;
+            display: inline-block !important;
+        }
+
+        /* Título principal del artículo */
+        h2.article-title {
+            color: #1b5e20 !important;
+            font-size: 2.5rem !important;
+            line-height: 1.2 !important;
+            margin: 20px 0 !important;
+        }
+
+        /* Subtítulos con la línea verde vertical (tu "Nota Importante") */
+        .subtitle-section {
+            border-left: 5px solid #1b5e20 !important; /* Línea verde */
+            padding-left: 15px !important;
+            margin: 30px 0 15px !important;
+            color: #1b5e20 !important;
+            font-size: 1.6rem !important;
+            background: transparent !important; /* Aseguramos que no tenga fondo oscuro */
+        }
+
+        /* Estilo para el botón de Volver al Inicio inferior */
+        .btn-footer-container { text-align: center !important; margin-top: 40px !important; }
+        .btn-footer {
+            background: #1b5e20 !important;
+            color: white !important;
+            text-decoration: none !important;
+            padding: 10px 20px !important;
+            border-radius: 5px !important;
+            display: inline-block !important;
+        }
+    </style>
 </head>
 <body>
 
-<header><h1 style="margin:0; letter-spacing: 4px;">EL VESTUARIO</h1></header>
+        <div class="navbar">
+        <span>⚽</span> <h1>EL VESTUARIO</h1>
+    </div>
 
-<section class="hero">
-    <div class="hero-title">
-        <span class="category">Análisis de Formación</span>
-        <h1>Fábricas de Talentos: Mejores Canteras</h1>
-    </div>
-</section>
+        <div class="container-article">
+        <a href="index.html" class="back-link">← Volver al inicio ANÁLISIS DE FORMACIÓN</a>
+        
+        <h2 class="article-title">Fábricas de Talentos: Mejores Canteras</h2>
+        
+        <p>El fútbol moderno no solo se trata de billeteras grandes, sino de quién forma mejor a sus jóvenes talentos. La sostenibilidad de un club depende de su capacidad para producir jugadores de élite.</p>
 
-<main class="container">
-    <p>El fútbol moderno no solo se trata de billeteras grandes, sino de quién forma mejor a sus jóvenes talentos. La sostenibilidad de un club depende de su capacidad para producir jugadores de élite.</p>
-    
-    <h2>La Masía: El ADN del Barça</h2>
-    <p>No se puede hablar de canteras sin mencionar el lugar donde se formaron Messi, Xavi e Iniesta. Su filosofía de juego posicional es única en el mundo y sigue siendo el estándar de oro.</p>
+                <h3 class="subtitle-section">La Masía: El ADN del Barça</h3>
+        <p>No se puede hablar de canteras sin mencionar el lugar donde se formaron Messi, Xavi e Iniesta. Su filosofía de juego posicional es única en el mundo y sigue siendo el estándar de oro.</p>
 
-    <h2>Ajax: La Escuela Total</h2>
-    <p>El equipo holandés ha perfeccionado el arte de vender caro y producir constante. Su sistema de captación y desarrollo técnico es un referente global para cualquier club que aspire a la excelencia.</p>
-    
-    <p>Otras canteras destacadas que están dominando el mercado actual incluyen al Benfica en Portugal y al Santos en Brasil, fuentes inagotables de cracks mundiales.</p>
+        <h3 class="subtitle-section">Ajax: La Escuela Total</h3>
+        <p>El equipo holandés ha perfeccionado el arte de vender caro y producir constante. Su sistema de captación y desarrollo técnico es un referente global para cualquier club que aspire a la excelencia.</p>
+        
+        <p>Otras canteras destacadas que están dominando el mercado actual incluyen al Benfica en Portugal y al Santos en Brasil, fuentes inagotables de cracks mundiales.</p>
 
-    <center><a href="index.html" class="back-btn">← Volver al Inicio</a></center>
-</main>
-
-<footer>
-    <p>© 2026 El Vestuario. Todos los derechos reservados.</p>
-    <a href="index.html">Inicio</a> | <a href="privacidad.html">Privacidad</a> | <a href="contacto.html">Contacto</a>
-</footer>
+                <div class="btn-footer-container">
+            <a href="index.html" class="btn-footer">← Volver al Inicio</a>
+        </div>
+    </div>
 
 </body>
 </html>
