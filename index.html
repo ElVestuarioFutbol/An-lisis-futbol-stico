@@ -12,17 +12,53 @@
         header { background: var(--dark); color: white; padding: 40px 20px; text-align: center; border-bottom: 4px solid var(--primary); }
         .main-title { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 900; margin: 0; }
         
+       /* Nuevo diseño de Hero dividido */
         .hero { 
-            display: flex; align-items: flex-end; min-height: 450px; width: 100%; 
-            position: relative; overflow: hidden; background-color: #000; cursor: pointer;
+            display: flex; 
+            min-height: 500px; 
+            width: 100%; 
+            max-width: 1200px; 
+            margin: 20px auto; 
+            overflow: hidden; 
+            background-color: #000;
         }
-        .hero-bg {
+
+        /* Columna izquierda con la imagen */
+        .hero-left { 
+            flex: 2; 
+            position: relative;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-end;
+            padding: 40px; 
+            color: white;
+            cursor: pointer;
+        }
+
+        .hero-bg-new {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.1) 100%), 
-                             url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400');
+            background-image: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.2) 100%), 
+                              url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400');
             background-size: cover; background-position: center; z-index: 1;
         }
-        .hero-content { position: relative; z-index: 2; padding: 40px; color: white; max-width: 800px; }
+
+        .hero-content { position: relative; z-index: 2; }
+
+        /* Columna derecha con los datos en verde */
+        .hero-right { 
+            flex: 1; 
+            background: var(--primary);
+            padding: 40px; 
+            color: white;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .data-item h2 { font-size: 3rem; margin: 0; font-weight: 900; line-height: 1; }
+        .data-item p { font-size: 0.85rem; margin: 5px 0; opacity: 0.9; line-height: 1.2; }
+        .data-label { font-weight: bold; text-transform: uppercase; color: var(--gold); font-size: 0.75rem; }
 
         .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
         .section-title { border-bottom: 3px solid var(--primary); padding-bottom: 10px; margin-top: 40px; }
