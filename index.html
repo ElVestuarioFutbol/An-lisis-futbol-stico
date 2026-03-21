@@ -3,247 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Vestuario | Fútbol de Fondo</title>
     <title>El Vestuario | Análisis y Cultura Futbolística</title>
-    <meta name="description" content="Historias, táctica y el mercado de fichajes. El fútbol como nunca lo habías leído.">
+    
+    <meta name="description" content="Historias, táctica y el mercado de fichajes. El fútbol como nunca lo habías leído en El Vestuario.">
+    <meta name="keywords" content="fútbol, análisis táctico, mercado de fichajes, historia del fútbol, Guardiola">
+    <link rel="canonical" href="https://tu-usuario.github.io/el-vestuario/">
 
     <meta property="og:title" content="El Vestuario - Portal de Fútbol">
     <meta property="og:description" content="Análisis táctico, leyendas y las últimas noticias del mercado.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1080&auto=format&fit=crop">
-    <meta property="og:url" content="https://tu-usuario.github.io/el-vestuario/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1080">
     <meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="El Vestuario">
-    <meta name="twitter:description" content="Tu dosis diaria de cultura futbolística.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1080&auto=format&fit=crop">
     <style>   
-    body { font-family: sans-serif; line-height: 1.6; margin: 0; background: #f4f4f4; color: #333; }
-        header { background: #1a1a1a; color: white; padding: 20px; text-align: center; }
-        .container { max-width: 800px; margin: 20px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .ad-space { background: #eee; border: 1px dashed #ccc; text-align: center; padding: 10px; margin: 20px 0; color: #888; font-size: 0.8rem; }
-        h1 { color: #ffffff; margin: 0; }
-        h2 { color: #1a1a1a; }
-        .btn { background: #2e7d32; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; }
-       .recent-grid {
+        :root {
+            --primary-green: #1b5e20;
+            --accent-gold: #ffcc00;
+            --dark-bg: #1a1a1a;
+            --light-text: #f4f4f4;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background: #f9f9f9; color: #333; }
+        
+        /* Navegación */
+        nav { background: #000; padding: 10px 20px; display: flex; justify-content: center; gap: 20px; border-bottom: 1px solid #333; }
+        nav a { color: white; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+        nav a:hover { color: var(--accent-gold); }
+
+        header { background: var(--dark-bg); color: white; padding: 40px 20px; text-align: center; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        
+        .ad-space { background: #eee; border: 1px dashed #ccc; text-align: center; padding: 20px; margin: 30px 0; color: #888; font-size: 0.8rem; text-transform: uppercase; }
+        
+        h1, h2, h3 { margin: 0; }
+        .main-title { font-weight: bold; text-transform: uppercase; letter-spacing: 3px; font-size: 2.5rem; }
+
+        /* Hero Section */
+        .hero { 
+            display: flex; align-items: flex-end; min-height: 500px; width: 100%; 
+            position: relative; overflow: hidden; background-color: #000; cursor: pointer;
+        }
+        .hero-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.8) 100%), 
+                             url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400');
+            background-size: cover; background-position: center 20%; z-index: 1;
+        }
+        .hero-content { position: relative; z-index: 2; padding: 60px 40px; color: white; max-width: 800px; }
+
+        /* Grid de Artículos */
+        .section-title { border-bottom: 3px solid var(--primary-green); padding-bottom: 10px; margin: 40px 0 20px; font-size: 1.8rem; }
+        
+        .recent-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
         }
+        
         .card {
-            position: relative;
-            background: #000;
-            border-radius: 4px;
-            overflow: hidden;
-            height: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            transition: transform 0.2s;
-            cursor: pointer;
+            position: relative; background: #000; border-radius: 8px; overflow: hidden;
+            height: 380px; display: flex; flex-direction: column; justify-content: flex-end;
+            transition: transform 0.3s ease; cursor: pointer;
         }
-        .card:hover { transform: scale(1.02); }
-        .card-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+        .card:hover { transform: translateY(-5px); }
+        .card-bg-img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover; background-position: center; z-index: 1;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%);
         }
-        .card-content {
-            position: relative;
-            z-index: 2;
-            padding: 20px;
-            color: white;
-        }
-        .card-category {
-            font-size: 0.7rem;
-            font-weight: bold;
-            color: #ffcc00;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            display: block;
-        }
-        .card h3 {
-            margin: 0;
-            font-size: 1.4rem;
-            line-height: 1.2;
-            font-weight: 800;
-        }
-    </style>
-</head>
-<body>
+        .card-content { position: relative; z-index: 2; padding: 25px; color: white; }
+        .card-category { font-size: 0.75rem; font-weight: 900; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 8px; display: block; }
+        .card h3 { font-size: 1.5rem; line-height: 1.2; font-weight: 800; }
 
-<header>
-   <h1 style="display: flex; align-items: center; justify-content: center; gap: 10px; color: white;">
-    <svg width="40" height="40" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="45" fill="#1b5e20"/>
-        <path d="M50 5 L50 95 M5 50 L95 50 M18 18 L82 82 M82 18 L18 82" stroke="white" stroke-width="2" opacity="0.3"/>
-        <text x="50" y="65" font-family="Arial" font-size="40" fill="white" text-anchor="middle" font-weight="bold">EV</text>
-    </svg>
- <span style="color: #ffffff !important; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">El Vestuario</span>
-</h1>
-    <p>Análisis y cultura futbolística</p>
-</header>
+        footer { text-align: center; padding: 50px 20px; color: #777; font-size: 0.9rem; background: #fff; border-top: 1px solid #eee; margin-top: 50px; }
+        footer a { color: #555; text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: var(--primary-green); }
 
-</div> 
-
-    <section style="display: flex; align-items: flex-end; min-height: 550px; width: 100%; position: relative; overflow: hidden; background-color: #000; cursor: pointer;" onclick="location.href='pressing-alto.html';">
-        
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(to right, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&auto=format&fit=crop'); background-size: cover; background-position: center 20%; z-index: 1;"></div>
-
-        <div style="position: relative; z-index: 2; padding: 60px 20px; color: white; width: 100%; max-width: 1000px; margin: 0 auto;">
-            <span style="color: #ffcc00; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Análisis Táctico</span>
-            <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin: 10px 0; font-weight: 900; line-height: 1.1; text-shadow: 2px 2px 10px rgba(0,0,0,0.8);">
-                El Arte del Pressing Alto:<br>Por qué Guardiola cambió el fútbol
-            </h1>
-            <p style="font-size: 1.1rem; max-width: 500px; opacity: 0.9; margin-bottom: 25px;">
-                Descubre cómo el posicionamiento y la presión coordinada revolucionaron la defensa moderna.
-            </p>
-            <a href="pressing-alto.html" class="btn" style="background: #1b5e20; padding: 12px 35px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.3); text-decoration: none; color: white; display: inline-block;">
-                Leer análisis completo →
-            </a>
-        </div>
-    </section>
-
-    <div class="container">
-      </a>
-    </div>
-</section>
-
-    <div class="ad-space">Espacio Publicitario In-Feed</div>
-
-    <h2 style="border-bottom: 2px solid #2e7d32; padding-bottom: 5px;">Artículos Recientes</h2>
- <div class="recent-grid">
-        
-        <div class="card" onclick="location.href='pele-maradona.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">HISTORIA</span>
-                    <h3>Pelé vs Maradona: El Debate Eterno</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='fuera-de-juego.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">REGLAMENTO</span>
-                    <h3>¿Entiendes el Fuera de Juego?</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='ajedrez-mercado.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1431324155629-1a6eda1dc150?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">ANÁLISIS</span>
-                    <h3>El Ajedrez del Mercado: Cláusulas</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='leyendas-olvidadas.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">HISTORIA</span>
-                    <h3>5 Leyendas que el tiempo olvidó</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='ranking-fifa.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1529900611114-26d119b480f5?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">DATO</span>
-                    <h3>¿Cómo funciona el Ranking FIFA?</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='formaciones-futuro.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1459865264687-595d652de67e?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">TÁCTICA</span>
-                    <h3>Formaciones del Futuro</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='tecnologia-var.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1510051646651-38374d9e9690?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">TECNOLOGÍA</span>
-                    <h3>¿Por qué el VAR tarda tanto?</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='fichajes-historicos.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">MERCADO</span>
-                    <h3>Fichajes que rompieron el mercado</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='pressing-alto.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1516567727245-ad8c68f3ec93?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">TÁCTICA</span>
-                    <h3>La Regla de los 5 Segundos</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='falso-nueve.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">TÁCTICA</span>
-                    <h3>El Falso 9: El Invento que Rompió Defensas</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='botas-historia.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">TECNOLOGÍA</span>
-                    <h3>De Cuero a Fibra: Evolución de los Guayos</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='derechos-tv.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1511886929837-354d827aae26?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">MERCADO</span>
-                    <h3>¿Cómo funcionan los Derechos de TV?</h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="card" onclick="location.href='sedes-mundial.html';">
-            <div class="card-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1000');">
-                <div class="card-content">
-                    <span class="card-category">HISTORIA</span>
-                    <h3>¿Cómo elige la FIFA las sedes?</h3>
-                </div>
-            </div>
-        </div>
-
-    </div> 
-
-    <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #222; color: #fff; padding: 15px; text-align: center; z-index: 1000;">
-        <p style="margin: 0; font-size: 14px;">Utilizamos cookies para mejorar tu experiencia y monetizar con Google AdSense. Al continuar navegando, aceptas nuestra política de cookies.</p>
-        <button onclick="document.getElementById('cookie-banner').style.display='none'" style="margin-top: 10px; background: #1b5e20; color: white; border: none; padding: 8px 15px; cursor: pointer; border-radius: 5px;">Aceptar</button>
-    </div>
-<footer style="text-align: center; padding: 30px; color: #666; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 40px;">
-        <p>© 2026 El Vestuario. Quiénes Somos | Privacidad | Términos y Condiciones | Contacto</p>
-    </footer>
-</body>
-</html>
+        .btn-main {
+            background: var(--primary-green); padding: 12px 30px; border-radius: 5
